@@ -9,7 +9,7 @@ pygame.init()
 # create surface
 surface = pygame.display.set_mode((1200, 800))
 # set title bar caption
-pygame.display.set_caption("Blue Sky")
+pygame.display.set_caption("12-1 Blue Sky")
 # blue sky
 bg_color = (135, 206, 235)
 # set background color to sky blue
