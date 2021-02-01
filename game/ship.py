@@ -1,3 +1,6 @@
+"""
+Contains the ship class for the Alien Invasion game.
+"""
 import pygame
 
 class Ship:
