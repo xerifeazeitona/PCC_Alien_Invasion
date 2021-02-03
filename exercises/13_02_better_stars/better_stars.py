@@ -1,7 +1,7 @@
 """
 13-2. Better Stars
 You can make a more realistic star pattern by introducing randomness
-when you place each star. 
+when you place each star.
 Recall that you can get a random number like this:
     from random import randint
     random_number = randint(-10, 10)
@@ -11,9 +11,9 @@ Using your code in Exercise 13-1, adjust each star’s position by a
 random amount.
 """
 import sys
+from random import randint
 import pygame
 from pygame.sprite import Sprite
-from random import randint
 
 class Star(Sprite):
     """A class to represent a single star."""
