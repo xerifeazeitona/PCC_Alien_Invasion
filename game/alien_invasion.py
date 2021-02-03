@@ -88,6 +88,11 @@ class AlienInvasion:
         collisions = pygame.sprite.groupcollide(
             self.bullets, self.aliens, True, True)
 
+        if not self.aliens:
+            # Destroy existing bullets and create a new fleet of aliens.
+            self.bullets.empty()
+            self._create_fleet()
+
     def set_screen_mode(self):
         """Toggle between fullscreen and windowed."""
         if self.settings.fullscreen:
