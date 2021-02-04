@@ -124,6 +124,7 @@ class AlienInvasion:
     def _check_keydown_events(self, event):
         """Respond to keypresses."""
         if event.key == pygame.K_q:
+            self.stats.set_high_score()
             sys.exit()
         if self.stats.game_active:
             if event.key == pygame.K_RIGHT:
