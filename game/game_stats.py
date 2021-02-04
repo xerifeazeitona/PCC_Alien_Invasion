@@ -10,6 +10,7 @@ class GameStats:
         self.reset_stats()
         # Start Alien Invasion in an inactive state.
         self.game_active = False
+        self.choosing_difficulty = False
 
     def reset_stats(self):
         """Initialize statistics that can change during the game."""

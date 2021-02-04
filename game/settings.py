@@ -28,13 +28,22 @@ class Settings:
         # How quickly the game speeds up on level up
         self.speedup_scale = 1.1
 
-        self.initialize_dynamic_settings()
+        self.initialize_dynamic_settings('normal')
 
-    def initialize_dynamic_settings(self):
+    def initialize_dynamic_settings(self, difficulty):
         """Initialize settings that change throughout the game."""
-        self.ship_speed = 1.5
-        self.bullet_speed = 1.5
-        self.alien_speed = 1.0
+        if difficulty == 'easy':
+            self.ship_speed = 2
+            self.bullet_speed = 3
+            self.alien_speed = 0.5
+        elif difficulty == 'normal':
+            self.ship_speed = 1.5
+            self.bullet_speed = 2
+            self.alien_speed = 1.0
+        elif difficulty == 'hard':
+            self.ship_speed = 1.5
+            self.bullet_speed = 1.5
+            self.alien_speed = 1.5
         # 1 for right, -1 for left
         self.fleet_direction = 1
 
