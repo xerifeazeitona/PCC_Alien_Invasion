@@ -1,12 +1,8 @@
 """
-14-2. Target Practice
-Create a rectangle at the right edge of the screen that moves up and
-down at a steady rate. Then have a ship appear on the left side of the
-screen that the player can move up and down while firing bullets at the
-moving, rectangular target. Add a Play button that starts the game,
-and when the player misses the target three times, end the game and make
-the Play button reappear. Let the player restart the game with this Play
-button.
+14-3. Challenging Target Practice
+Start with your work from Exercise 14-2. Make the target move faster as
+the game progresses, and restart the target at the original speed when
+the player clicks Play.
 """
 
 import sys
@@ -75,6 +71,7 @@ class SuperRocket:
 
     def _start_game(self):
         """Start a new game"""
+        self.settings.initialize_dynamic_settings()
         self.stats.reset_stats()
         self.stats.game_active = True
 
@@ -140,6 +137,7 @@ class SuperRocket:
             # Destroy existing bullets and create a new fleet of enemies
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _rocket_hit(self):
         """Respond to the rocket being hit by an enemy."""
