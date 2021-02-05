@@ -106,9 +106,7 @@ class AlienInvasion:
         self.stats.reset_stats()
         self.stats.choosing_difficulty = False
         self.stats.game_active = True
-        self.sb.prep_score()
-        self.sb.prep_level()
-        self.sb.prep_ships()
+        self.sb.prep_images()
 
         # Get rid of any remaining aliens and bullets.
         self.aliens.empty()
@@ -175,13 +173,17 @@ class AlienInvasion:
             self.sb.check_high_score()
 
         if not self.aliens:
-            # Destroy existing bullets and create a new fleet of aliens.
-            self.bullets.empty()
-            self._create_fleet()
-            self.settings.increase_speed()
-            # Increase level
-            self.stats.level += 1
-            self.sb.prep_level()
+            self._start_new_level()
+
+    def _start_new_level(self):
+        """Prepare the game for a new level."""
+        # Destroy existing bullets and create a new fleet of aliens.
+        self.bullets.empty()
+        self._create_fleet()
+        self.settings.increase_speed()
+        # Increase level
+        self.stats.level += 1
+        self.sb.prep_level()
 
     def _ship_hit(self):
         """Respond to the ship being hit by an alien."""
